@@ -82,7 +82,8 @@ local.properties
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
-
+.idea/
+design-patterns.iml
 # CMake
 cmake-build-debug/
 
