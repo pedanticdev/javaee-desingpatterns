@@ -3,6 +3,8 @@ package com.pedantic;
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;
 import javax.inject.Inject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Decorator
 public class SushiServiceDecorator implements Food {
@@ -12,10 +14,12 @@ public class SushiServiceDecorator implements Food {
     @Delegate
     Food food;
 
+    @Inject
+    Logger logger;
 
     @Override
     public String prepare() {
-        System.out.println("Adding 20gm of pepper to the sushi");
+        logger.log(Level.INFO, "Adding 20gm of pepper to the sushi");
         return food.prepare();
     }
 }
