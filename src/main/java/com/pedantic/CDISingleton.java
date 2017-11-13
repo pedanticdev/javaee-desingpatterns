@@ -15,7 +15,7 @@ public class CDISingleton {
     Event<String> orderEvent;
 
     @Inject
-    @Pizza
+    @Sushi
     Food foodService;
 
     public void addFood(String food) {
@@ -23,7 +23,7 @@ public class CDISingleton {
 //        orderEvent.fire(food + " was ordered at " + new Date().toString());
 
 
-        orderEvent.fireAsync(food + " was ordered at " + new Date().toString());
+//        orderEvent.fireAsync(food + " was ordered at " + new Date().toString());
         System.out.println(foodService.prepare());
 
     }
