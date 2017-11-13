@@ -14,12 +14,18 @@ public class CDISingleton {
     @Inject
     Event<String> orderEvent;
 
+    @Inject
+    @Pizza
+    Food foodService;
 
     public void addFood(String food) {
         foods.add(food);
-
 //        orderEvent.fire(food + " was ordered at " + new Date().toString());
+
+
         orderEvent.fireAsync(food + " was ordered at " + new Date().toString());
+        System.out.println(foodService.prepare());
+
     }
 
     public int giveMeYourCode() {
